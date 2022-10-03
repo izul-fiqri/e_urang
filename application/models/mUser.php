@@ -12,4 +12,15 @@ class mUser extends CI_Model
     $query = $this->db->get();
     return $query;
   }
+
+  public function getdata($id = null)
+  {
+    $this->db->select('*');
+    $this->db->from('user');
+    if ($id != null) {
+      $this->db->where('user_id', $id);
+    }
+    $query = $this->db->get();
+    return $query;
+  }
 }
