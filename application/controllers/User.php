@@ -115,9 +115,9 @@ class User extends CI_Controller
     $query = $this->db->query("SELECT * FROM user WHERE username= '$post[username]' AND user_id!='$post[user_id]'");
     if ($query->num_rows() > 0) {
       $this->form_validation->set_message('username_check', '{field} sudah dipakai, silahkan ganti');
-      return true;
-    } else {
       return false;
+    } else {
+      return true;
     }
   }
 
