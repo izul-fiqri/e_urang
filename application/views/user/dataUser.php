@@ -48,15 +48,21 @@
               <td><?= $data->contact; ?></td>
               <td><?= $data->email; ?></td>
               <td><?= $data->level == 1 ? "Admin" : "Head" ?></td>
-              <td class="text-center" width="160px">
-                <a href="<?= site_url('user/add'); ?>" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>Edit</a>
-                <a href="<?= site_url('user/add'); ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>Hapus </a>
+              <td>
+                <form action="<?= site_url('user/hapus'); ?>" method="POST">
+                  <a href="<?= site_url('user/edit/' . $data->user_id); ?>" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>
+                    Edit
+                  </a>
+                  <input type="hidden" value="<?= $data->user_id; ?>" name="user_id">
+                  <button onclick="return confirm('Apakah Anda yakin?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>
+                    Hapus
+                  </button>
+                </form>
 
               </td>
             </tr>
           <?php endforeach; ?>
         </tbody>
-
       </table>
     </div>
     <!-- /.box-body -->

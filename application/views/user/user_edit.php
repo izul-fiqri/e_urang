@@ -14,7 +14,7 @@
 <section class="content">
   <div class="box">
     <div class="box-header">
-      <h3 class="box-title">Tambah Pengguna</h3>
+      <h3 class="box-title">Edit Pengguna</h3>
       <div class="pull-right">
         <a href="<?= site_url('user'); ?>" class="btn btn-primary btn-flat">
           <i class="fa fa-undo"></i>
@@ -28,47 +28,49 @@
         <div class="col-md-4 col-md-offset-4">
           <!-- <?= validation_errors(); ?> -->
           <form action="" method="post">
+            <input type="hidden" name="user_id" value="<?= $row->user_id; ?>">
             <div class="form-group <?= form_error('name') ? 'has-error' : null ?>">
               <label for="name">Nama</label>
-              <input type="text" id=name name="name" value="<?= set_value('name'); ?>" class="form-control">
+              <input type="text" id=name name="name" value="<?= $this->input->post('name') ?? $row->name; ?>" class="form-control">
               <?= form_error('name'); ?>
             </div>
             <div class="form-group <?= form_error('username') ? 'has-error' : null ?>">
               <label for="username">Username</label>
-              <input type="text" id=username name="username" value="<?= set_value('username'); ?>" class=" form-control">
+              <input type="text" id=username name="username" value="<?= $this->input->post('username') ?? $row->username; ?>" class=" form-control">
               <?= form_error('username'); ?>
             </div>
             <div class="form-group <?= form_error('password') ? 'has-error' : null ?>">
-              <label for="password">Password</label>
-              <input type="password" id=password name="password" value="<?= set_value('password'); ?>" class=" form-control">
+              <label for="password">Password</label><small> <i>(Biarkan kosong jika tidak ingin diganti)</i></small>
+              <input type="password" id=password name="password" value="<?= $this->input->post('password') ?>" class=" form-control">
               <?= form_error('password'); ?>
             </div>
             <div class="form-group <?= form_error('konfirm_password') ? 'has-error' : null ?>">
               <label for="password">Konfirmasi Password</label>
-              <input type="password" id=konfirm_password name="konfirm_password" value="<?= set_value('konfirm_password'); ?>" class=" form-control">
+              <input type="password" id=konfirm_password name="konfirm_password" value="<?= $this->input->post('konfirm_password') ?>" class=" form-control">
               <?= form_error('konfirm_password'); ?>
             </div>
             <div class="form-group <?= form_error('contact') ? 'has-error' : null ?>">
               <label for="contact">Contact</label>
-              <input type="text" id=contact name="contact" value="<?= set_value('contact'); ?>" class="form-control">
+              <input type="text" id=contact name="contact" value="<?= $this->input->post('contact') ?? $row->contact; ?>" class="form-control">
               <?= form_error('contact'); ?>
             </div>
             <div class="form-group <?= form_error('email') ? 'has-error' : null ?>">
               <label for="email">Email</label>
-              <input type="text" id=email name="email" value="<?= set_value('email'); ?>" class="form-control">
+              <input type="text" id=email name="email" value="<?= $this->input->post('email') ?? $row->email; ?>" class="form-control">
               <?= form_error('email'); ?>
             </div>
             <div class="form-group <?= form_error('alamat') ? 'has-error' : null ?>">
               <label for="alamat">Alamat</label>
-              <textarea name="alamat" id="alamat" class=" form-control"><?= set_value('alamat'); ?></textarea>
+              <textarea name="alamat" id="alamat" class=" form-control"><?= $this->input->post('alamat') ?? $row->address; ?></textarea>
               <?= form_error('alamat'); ?>
             </div>
             <div class="form-group <?= form_error('level') ? 'has-error' : null ?>">
               <label for="level">Level</label>
               <select name="level" id="level" class="form-control">
+                <?php $level = $this->input->post('level') ? $this->input->post('level') : $row->level ?>
                 <option value="">-Pilih-</option>
-                <option value="1" <?= set_value('level') == 1 ? "selected" : null ?>>Admin</option>
-                <option value="2" <?= set_value('level') == 2 ? "selected" : null ?>>Head</option>
+                <option value="1" <?= $level == 1 ? 'selected' : null; ?>>Admin</option>
+                <option value="2" <?= $level == 2 ? 'selected' : null; ?>>Head</option>
               </select>
               <?= form_error('level'); ?>
             </div>

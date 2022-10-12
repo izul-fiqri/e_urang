@@ -23,4 +23,36 @@ class mUser extends CI_Model
     $query = $this->db->get();
     return $query;
   }
+
+  public function add($post)
+  {
+    $params['name'] = $post['name'];
+    $params['username'] = $post['username'];
+    $params['password'] = sha1($post['password']);
+    $params['address'] = $post['alamat'];
+    $params['contact'] = $post['contact'];
+    $params['email'] = $post['email'];
+    $params['level'] = $post['level'];
+    $this->db->insert('user', $params);
+  }
+
+  public function edit($post)
+  {
+    $params['name'] = $post['name'];
+    $params['username'] = $post['username'];
+    if (!empty($post['password'])) {
+      $params['password'] = sha1($post['password']);
+    }
+    $params['address'] = $post['alamat'];
+    $params['contact'] = $post['contact'];
+    $params['email'] = $post['email'];
+    $params['level'] = $post['level'];
+    $this->db->where('user_id', $post['user_id']);
+    $this->db->update('user', $params);
+  }
+  public function hapus($id)
+  {
+    $this->db->where('user_id', $id);
+    $this->db->delete('user');
+  }
 }
