@@ -4,7 +4,7 @@
   </h1>
   <ol class="breadcrumb">
     <li><a href="#">
-        <i class="fa fa-users"></i>
+        <i class="fa fa-vimeo"></i>
       </a></li>
     <li class="active">Lowongan</li>
   </ol>
@@ -31,6 +31,8 @@
             <th>Nama Lowongan</th>
             <th>Kuota</th>
             <th>Deskripsi</th>
+            <th>Buka Pendaftaran</th>
+            <th>Tutup Pendaftaran</th>
           </tr>
         </thead>
         <tbody>
@@ -41,6 +43,8 @@
               <td><?= $data->nama_lowongan; ?></td>
               <td><?= $data->kouta; ?></td>
               <td><?= $data->description; ?></td>
+              <td><?= $data->tgl_buka; ?></td>
+              <td><?= $data->tgl_tutup; ?></td>
               <td>
                 <a href="<?= site_url('lowongan/edit/' . $data->lowongan_id); ?>" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>
                   Edit

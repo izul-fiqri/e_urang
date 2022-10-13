@@ -48,21 +48,6 @@
               <input type="password" id=konfirm_password name="konfirm_password" value="<?= set_value('konfirm_password'); ?>" class=" form-control">
               <?= form_error('konfirm_password'); ?>
             </div>
-            <div class="form-group <?= form_error('contact') ? 'has-error' : null ?>">
-              <label for="contact">Contact</label>
-              <input type="text" id=contact name="contact" value="<?= set_value('contact'); ?>" class="form-control">
-              <?= form_error('contact'); ?>
-            </div>
-            <div class="form-group <?= form_error('email') ? 'has-error' : null ?>">
-              <label for="email">Email</label>
-              <input type="text" id=email name="email" value="<?= set_value('email'); ?>" class="form-control">
-              <?= form_error('email'); ?>
-            </div>
-            <div class="form-group <?= form_error('alamat') ? 'has-error' : null ?>">
-              <label for="alamat">Alamat</label>
-              <textarea name="alamat" id="alamat" class=" form-control"><?= set_value('alamat'); ?></textarea>
-              <?= form_error('alamat'); ?>
-            </div>
             <div class="form-group <?= form_error('level') ? 'has-error' : null ?>">
               <label for="level">Level</label>
               <select name="level" id="level" class="form-control">

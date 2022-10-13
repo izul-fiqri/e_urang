@@ -30,9 +30,6 @@
             <th>No</th>
             <th>Nama</th>
             <th>Username</th>
-            <th>Alamat</th>
-            <th>No. Telepon</th>
-            <th>Email</th>
             <th>Level</th>
             <th>Actions</th>
           </tr>
@@ -44,9 +41,6 @@
               <td><?= $no++ ?></td>
               <td><?= $data->name; ?></td>
               <td><?= $data->username; ?></td>
-              <td><?= $data->address; ?></td>
-              <td><?= $data->contact; ?></td>
-              <td><?= $data->email; ?></td>
               <td><?= $data->level == 1 ? "Admin" : "Head" ?></td>
               <td>
                 <form action="<?= site_url('user/hapus'); ?>" method="POST">

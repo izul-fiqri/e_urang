@@ -4,7 +4,7 @@
   </h1>
   <ol class="breadcrumb">
     <li><a href="#">
-        <i class="fa fa-users"></i>
+        <i class="fa fa-vimeo"></i>
       </a></li>
     <li class="active">Lowongan</li>
   </ol>
@@ -40,6 +40,18 @@
               <label for="alamat">Deskripsi</label>
               <textarea name="deskripsi" id="deskripsi" class="form-control" ?><?= $row->description; ?></textarea>
             </div>
+            <div class="form-group">
+              <label>Tanggal Buka</label>
+
+              <div class="input-group date">
+                <div class="input-group-addon">
+                  <i class="fa fa-calendar"></i>
+                </div>
+                <input type="text" class="form-control pull-right" id="datepicker">
+              </div>
+              <!-- /.input group -->
+            </div>
+
             <div class=" form-group">
               <button type="submit" name="<?= $page; ?>" class="btn btn-success btn-flat">
                 <i class="fa fa-paper-plane-o"> Save</i></button>

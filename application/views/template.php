@@ -73,7 +73,7 @@
                 <li class="user-header">
                   <img src="<?= base_url() ?>assets/dist/img/user2-160x160.jpg" class="img-circle">
                   <p><?= $this->func->user_login()->name ?>
-                    <small><?= $this->func->user_login()->address ?></small>
+                    <small></small>
                   </p>
                 </li>
                 <li class="user-footer">
@@ -118,11 +118,10 @@
             <a href="<?= site_url('dashboard') ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
           </li>
           <li>
-            <a href="<?= site_url('lowongan'); ?>"><i class="fa fa-user-circle"></i> <span>Lowongan</span></a>
+            <a href="<?= site_url('lowongan'); ?>"><i class="fa fa-vimeo"></i> <span>Lowongan</span></a>
           </li>
           <li>
-            <a href="">
-              <i class="fa fa-spinner"></i> <span>Pelamar</span>
+            <a href="<?= site_url('pelamar'); ?>"><i class="fa fa-spinner"></i> <span>Pelamar</span>
             </a>
           </li>
           <li class="treeview">

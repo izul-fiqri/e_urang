@@ -30,17 +30,12 @@ class User extends CI_Controller
       'Konfirmasi Password',
       'required|matches[password]'
     );
-    $this->form_validation->set_rules('contact', 'Contact', 'required|numeric');
-    $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
-    $this->form_validation->set_rules('alamat', 'Alamat', 'required');
     $this->form_validation->set_rules('level', 'Level', 'required');
 
     $this->form_validation->set_message('required', '%s tidak boleh kosong');
     $this->form_validation->set_message('matches', '%s harus sama dengan password');
-    $this->form_validation->set_message('valid_email', '%s tidak valid');
     $this->form_validation->set_message('min_length', '{field} karakter kurang');
     $this->form_validation->set_message('is_unique', '{field} ini sudah dipakai');
-    $this->form_validation->set_message('numeric', '{field} harus angka');
 
     $this->form_validation->set_error_delimiters('<span class ="help-block">', '</span>');
     if ($this->form_validation->run() == false) {
@@ -77,17 +72,12 @@ class User extends CI_Controller
         'required|matches[password]'
       );
     }
-    $this->form_validation->set_rules('contact', 'Contact', 'required|numeric');
-    $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
-    $this->form_validation->set_rules('alamat', 'Alamat', 'required');
     $this->form_validation->set_rules('level', 'Level', 'required');
 
     $this->form_validation->set_message('required', '%s tidak boleh kosong');
     $this->form_validation->set_message('matches', '%s harus sama dengan password');
-    $this->form_validation->set_message('valid_email', '%s tidak valid');
     $this->form_validation->set_message('min_length', '{field} karakter kurang');
     $this->form_validation->set_message('is_unique', '{field} ini sudah dipakai');
-    $this->form_validation->set_message('numeric', '{field} harus angka');
 
     $this->form_validation->set_error_delimiters('<span class ="help-block">', '</span>');
     if ($this->form_validation->run() == false) {
