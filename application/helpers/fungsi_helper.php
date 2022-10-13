@@ -16,4 +16,13 @@ function check_not_login()
   if (!$user_session) {
     redirect('auth/login');
   }
+
+  function check_admin()
+  {
+    $ci = &get_instance();
+    $ci->load->library('func');
+    if ($ci->func->user_login()->level != 1) {
+      redirect('dashboard');
+    }
+  }
 }

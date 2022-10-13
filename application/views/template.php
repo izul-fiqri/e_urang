@@ -118,7 +118,7 @@
             <a href="<?= site_url('dashboard') ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
           </li>
           <li>
-            <a href=""><i class="fa fa-user-circle"></i> <span>Lowongan</span></a>
+            <a href="<?= site_url('lowongan'); ?>"><i class="fa fa-user-circle"></i> <span>Lowongan</span></a>
           </li>
           <li>
             <a href="">
@@ -157,7 +157,7 @@
               <li><a href="#"><i class="fa fa-circle-o"></i> Stocks</a></li>
             </ul>
           </li>
-          <?php if ($this->session->userdata('level') == 1) : ?>
+          <?php if ($this->func->user_login()->level == 1) : ?>
             <li class="header">SETTINGS</li>
             <li><a href="<?= site_url('user') ?>"><i class="fa fa-user"></i> <span>Users</span></a></li>
           <?php endif; ?>
