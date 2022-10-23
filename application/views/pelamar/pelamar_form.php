@@ -16,7 +16,7 @@
     <div class="box-header">
       <h3 class="box-title"><?= $page; ?> Pelamar</h3>
       <div class="pull-right">
-        <a href="<?= site_url('pelamar/detail/' .  $row->pelamar_id) ?>" class="btn btn-primary btn-flat">
+        <a href="<?= site_url('pelamar'); ?>" class="btn btn-primary btn-flat">
           <i class="fa fa-undo"></i>
           Back
         </a>

@@ -41,15 +41,12 @@
               <textarea name="deskripsi" id="deskripsi" class="form-control" ?><?= $row->description; ?></textarea>
             </div>
             <div class="form-group">
-              <label>Tanggal Buka</label>
-
-              <div class="input-group date">
-                <div class="input-group-addon">
-                  <i class="fa fa-calendar"></i>
-                </div>
-                <input type="text" class="form-control pull-right" id="datepicker">
-              </div>
-              <!-- /.input group -->
+              <label for="">Tanggal Buka</label>
+              <input class="form-control" id="tgl_buka" type="date" name="tgl_buka" value="<?= $row->tgl_buka; ?>" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="">Tanggal Tutup</label>
+              <input class="form-control" id="tgl_tutup" type="date" name="tgl_tutup" value="<?= $row->tgl_buka; ?>" placeholder="">
             </div>
 
             <div class=" form-group">

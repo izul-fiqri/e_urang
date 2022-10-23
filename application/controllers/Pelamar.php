@@ -67,6 +67,7 @@ class Pelamar extends CI_Controller
     }
     echo "<script>window.location='" . site_url('pelamar') . "'</script>";
   }
+
   public function detail($id)
   {
     $query = $this->mPelamar->getdata($id);

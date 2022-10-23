@@ -19,7 +19,10 @@ class mLowongan extends CI_Model
     $params = [
       'nama_lowongan' => $post['nama_lowongan'],
       'kouta' => $post['kuota'],
-      'description' => $post['deskripsi']
+      'description' => $post['deskripsi'],
+      'tgl_buka' => $post['tgl_buka'],
+      'tgl_tutup' => $post['tgl_tutup']
+
     ];
     $this->db->insert('lowongan', $params);
   }
@@ -29,7 +32,9 @@ class mLowongan extends CI_Model
     $params = [
       'nama_lowongan' => $post['nama_lowongan'],
       'kouta' => $post['kuota'],
-      'description' => $post['deskripsi']
+      'description' => $post['deskripsi'],
+      'tgl_buka' => $post['tgl_buka'],
+      'tgl_tutup' => $post['tgl_tutup']
     ];
 
     $this->db->where('lowongan_id', $post['id']);
