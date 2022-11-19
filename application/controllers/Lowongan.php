@@ -23,6 +23,8 @@ class Lowongan extends CI_Controller
     $lowongan->kouta = null;
     $lowongan->description = null;
     $lowongan->tgl_buka = null;
+    $lowongan->tgl_tutup = null;
+
     $data = array(
       'page' => 'Tambah',
       'row' => $lowongan

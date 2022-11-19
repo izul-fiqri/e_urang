@@ -4,6 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <link rel="icon" href="<?= base_url() ?>assets/cads/images/logommp.png">
   <title>e-Urang | Login</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -64,7 +66,7 @@
       </form>
 
       <a href="#">I forgot my password</a><br>
-      <a href="register.html" class="text-center">Register a new membership</a>
+      <a href="<?= site_url('auth/register') ?>" class="text-center">Belum punya akun</a>
 
     </div>
     <!-- /.login-box-body -->

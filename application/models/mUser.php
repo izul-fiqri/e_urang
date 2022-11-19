@@ -32,6 +32,14 @@ class mUser extends CI_Model
     $params['level'] = $post['level'];
     $this->db->insert('user', $params);
   }
+  public function register($post)
+  {
+    $params['name'] = $post['nik'];
+    $params['username'] = $post['email'];
+    $params['password'] = sha1($post['password']);
+    $params['level'] = 3;
+    $this->db->insert('user', $params);
+  }
 
   public function edit($post)
   {

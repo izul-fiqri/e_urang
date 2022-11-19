@@ -9,6 +9,25 @@ class Auth extends CI_Controller
     $this->load->view('login');
   }
 
+  public function register()
+  {
+    // check_already_login();
+    $this->load->view('register');
+    $this->load->model('mUser');
+    if (isset($_POST['register'])) {
+      $post = $this->input->post(null, true);
+      $this->mUser->register($post);
+      if ($this->db->affected_rows() > 0) {
+        echo "<script>alert('data berhasil ditambahkan. 
+        silahkan login untuk memulai pendaftaran')</script>";
+      }
+      echo "<script>window.location='" . site_url('user') . "'</script>";
+      echo "salah";
+    }
+  }
+
+
+
   public function process()
   {
     $post = $this->input->post(null, TRUE);
@@ -40,6 +59,6 @@ class Auth extends CI_Controller
   {
     $params = array('userid', 'level');
     $this->session->unset_userdata($params);
-    redirect('auth/login');
+    redirect('home');
   }
 }
