@@ -11,23 +11,20 @@ class Auth extends CI_Controller
 
   public function register()
   {
-    // check_already_login();
     $this->load->view('register');
     $this->load->model('mUser');
     if (isset($_POST['register'])) {
       $post = $this->input->post(null, true);
       $this->mUser->register($post);
       if ($this->db->affected_rows() > 0) {
-        echo "<script>alert('data berhasil ditambahkan. 
-        silahkan login untuk memulai pendaftaran')</script>";
+        echo "<script>alert('data berhasil ditambahkan. silahkan login untuk memulai pendaftaran')</script>";
       }
-      echo "<script>window.location='" . site_url('user') . "'</script>";
+      echo "<script>window.location='" . site_url('home') . "'</script>";
       echo "salah";
     }
   }
 
-
-
+  //fungsi proses login
   public function process()
   {
     $post = $this->input->post(null, TRUE);
@@ -45,8 +42,20 @@ class Auth extends CI_Controller
 
         echo "<script> 
         alert('Selamat, login berhasil');
-        window.location='" . site_url('dashboard') . "';
         </script>";
+        if ($row->level == 1) {
+          echo "<script> 
+        window.location='" . site_url('dashboard/dash_admin') . "';
+        </script>";
+        } else if ($row->level == 2) {
+          echo "<script> 
+        window.location='" . site_url('dashboard/dash_leader') . "';
+        </script>";
+        } else if ($row->level == 3) {
+          echo "<script> 
+          window.location='" . site_url('dashboard/dash_pelamar') . "';
+          </script>";
+        }
       } else {
         echo "<script> alert('login gagal, username/password salah');
         window.location='" . site_url('auth/login') . "';

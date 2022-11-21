@@ -1,77 +1,51 @@
-<section class="content-header">
-  <h1>Vacancy
-    <small>Lowongan</small>
-  </h1>
-  <ol class="breadcrumb">
-    <li><a href="#">
-        <i class="fa fa-vimeo"></i>
-      </a></li>
-    <li class="active">Lowongan</li>
-  </ol>
-</section>
+<div class="pagetitle">
+  <h1>Lowongan</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Admin</a></li>
+      <li class="breadcrumb-item">Lowongan</li>
+      <li class="breadcrumb-item active">Form Lowongan</li>
+    </ol>
+  </nav>
+</div><!-- End Page Title -->
 
-<!-- Main contenct -->
-<section class="content">
-  <div class="box">
-    <div class="box-header">
-      <h3 class="box-title"><?= $page; ?> Lowongan</h3>
-      <div class="pull-right">
-        <a href="<?= site_url('lowongan'); ?>" class="btn btn-primary btn-flat">
-          <i class="fa fa-undo"></i>
-          Back
-        </a>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title"><?= $page; ?> Lowongan</h5>
+
+    <!-- Form lowongan-->
+    <form class="row g-3 needs-validation" action="<?= site_url('admin/lowongan/proses'); ?>" method="POST" novalidate>
+      <input type="hidden" name="id" value="<?= $row->lowongan_id; ?>">
+      <div class="col-6">
+        <label for="nama_lowongan" class="form-label">Nama Lowongan</label>
+        <input type="text" class="form-control" id=nama_lowongan name="nama_lowongan" value="<?= $row->nama_lowongan; ?>" required>
+        <div class="invalid-feedback">nama tidak boleh kosong.</div>
       </div>
-    </div>
-    <!-- /.box-header -->
-    <div class="box-body">
-      <div class="row">
-        <div class="col-md-4 col-md-offset-4">
-          <form action="<?= site_url('lowongan/proses'); ?>" method="post">
-            <input type="hidden" name="id" value="<?= $row->lowongan_id; ?>">
-            <div class="form-group">
-              <label for="name">Nama Lowongan</label>
-              <input type="text" id=nama_lowongan name="nama_lowongan" value="<?= $row->nama_lowongan; ?>" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <label for="name">Kuota</label>
-              <input type="text" id=kuota name="kuota" value="<?= $row->kouta; ?>" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <label for="alamat">Deskripsi</label>
-              <textarea name="deskripsi" id="deskripsi" class="form-control" ?><?= $row->description; ?></textarea>
-            </div>
-            <div class="form-group">
-              <label for="">Tanggal Buka</label>
-              <input class="form-control" id="tgl_buka" type="date" name="tgl_buka" value="<?= $row->tgl_buka; ?>" placeholder="">
-            </div>
-            <div class="form-group">
-              <label for="">Tanggal Tutup</label>
-              <input class="form-control" id="tgl_tutup" type="date" name="tgl_tutup" value="<?= $row->tgl_buka; ?>" placeholder="">
-            </div>
-
-            <div class=" form-group">
-              <button type="submit" name="<?= $page; ?>" class="btn btn-success btn-flat">
-                <i class="fa fa-paper-plane-o"> Save</i></button>
-              <button type="reset" class="btn btn-flat">
-                Reset</button>
-
-            </div>
-
-
-          </form>
-        </div>
+      <div class="col-1">
+        <label for="kuota" class="form-label">Kuota</label>
+        <input type="text" class="form-control" id=kuota name="kuota" value="<?= $row->kouta; ?>" required>
+        <div class="invalid-feedback">kuota tidak boleh kosong.</div>
       </div>
-    </div>
-    <!-- /.box-body -->
+      <div class="col-12">
+        <label for="deskripsi">Deskripsi</label>
+        <textarea class="form-control" style="height: 100px;" name="deskripsi" id="deskripsi" ?><?= $row->description; ?></textarea>
+      </div>
+      <div class="col-6">
+        <label for="">Tanggal Buka</label>
+        <input class="form-control" id="tgl_buka" type="date" name="tgl_buka" value="<?= $row->tgl_buka; ?>" placeholder="" required>
+        <div class="invalid-feedback">tanggal buka tidak boleh kosong.</div>
+      </div>
+      <div class="col-6">
+        <label for="">Tanggal Tutup</label>
+        <input class="form-control" id="tgl_tutup" type="date" name="tgl_tutup" value="<?= $row->tgl_buka; ?>" placeholder="" required>
+        <div class="invalid-feedback">tanggal tutup tidak boleh kosong.</div>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" name="<?= $page; ?>" class="btn btn-primary">Submit</button>
+        <button type="reset" class="btn btn-secondary">Reset</button>
+      </div>
+    </form><!-- Vertical Form -->
+
   </div>
-  <!-- /.box -->
-  </div>
-  <!-- /.col -->
-  </div>
-  <!-- /.row -->
-</section>
-<!-- /.content -->
 </div>
-
-</footer>
-</section>

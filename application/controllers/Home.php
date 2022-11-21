@@ -13,6 +13,6 @@ class Home extends CI_Controller
     // check_not_login();
     check_already_login();
     $data['row'] = $this->mLowongan->getdata();
-    $this->load->view('home/home', $data);
+    $this->load->view('home', $data);
   }
 }

@@ -1,76 +1,60 @@
-<section class="content-header">
-  <h1>Vacancy
-    <small>Lowongan</small>
-  </h1>
-  <ol class="breadcrumb">
-    <li><a href="#">
-        <i class="fa fa-vimeo"></i>
-      </a></li>
-    <li class="active">Lowongan</li>
-  </ol>
-</section>
+<div class="pagetitle">
+  <h1>Lowongan</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Admin</a></li>
+      <li class="breadcrumb-item">Lowongan</li>
+      <li class="breadcrumb-item active">Data Lowongan</li>
+    </ol>
+  </nav>
+</div><!-- End Page Title -->
 
-<!-- Main contenct -->
-<section class="content">
-  <div class="box">
-    <div class="box-header">
-      <h3 class="box-title">Data Lowongan</h3>
-      <div class="pull-right">
-        <a href="<?= site_url('lowongan/add'); ?>" class="btn btn-primary btn-flat">
-          <i class="fa fa-user-plus"></i>
-          Tambah
-        </a>
-      </div>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Data Lowongan</h5>
+    <div>
+      <a href="<?= site_url('admin/lowongan/add'); ?>" class="btn btn-primary btn-flat">
+        Tambah
+      </a>
     </div>
-    <!-- /.box-header -->
-    <div class="box-body table-responsive">
-      <table class="table table-bordered table-striped">
-        <thead>
+    <!-- Table with hoverable rows -->
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama Lowongan</th>
+          <th>Kuota</th>
+          <th>Deskripsi</th>
+          <th>Buka Pendaftaran</th>
+          <th>Tutup Pendaftaran</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php $no = 1;
+        foreach ($row->result() as $key => $data) : ?>
           <tr>
-            <th>No</th>
-            <th>Nama Lowongan</th>
-            <th>Kuota</th>
-            <th>Deskripsi</th>
-            <th>Buka Pendaftaran</th>
-            <th>Tutup Pendaftaran</th>
+            <td><?= $no++ ?></td>
+            <td><?= $data->nama_lowongan; ?></td>
+            <td><?= $data->kouta; ?></td>
+            <td><?= $data->description; ?></td>
+            <td><?= $data->tgl_buka; ?></td>
+            <td><?= $data->tgl_tutup; ?></td>
+            <td>
+              <a href="<?= site_url('admin/lowongan/edit/' . $data->lowongan_id); ?>" class="btn btn-primary rounded-pill">
+                Edit
+              </a>
+              <a href="<?= site_url('admin/lowongan/hapus/' . $data->lowongan_id); ?>" onclick="return confirm('Apakah Anda Yakin hapus data?')" class="btn btn-danger rounded-pill">
+                Hapus
+              </a>
+
+              </form>
+
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          <?php $no = 1;
-          foreach ($row->result() as $key => $data) : ?>
-            <tr>
-              <td><?= $no++ ?></td>
-              <td><?= $data->nama_lowongan; ?></td>
-              <td><?= $data->kouta; ?></td>
-              <td><?= $data->description; ?></td>
-              <td><?= $data->tgl_buka; ?></td>
-              <td><?= $data->tgl_tutup; ?></td>
-              <td>
-                <a href="<?= site_url('lowongan/edit/' . $data->lowongan_id); ?>" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>
-                  Edit
-                </a>
-                <a href="<?= site_url('lowongan/hapus/' . $data->lowongan_id); ?>" onclick="return confirm('Apakah Anda Yakin hapus data?')" class="btn btn-danger btn-xs"><i class="fa fa-pencil"></i>
-                  Hapus
-                </a>
+        <?php endforeach; ?>
+      </tbody>
+    </table>
+    <!-- End Table with hoverable rows -->
 
-                </form>
-
-              </td>
-            </tr>
-          <?php endforeach; ?>
-        </tbody>
-      </table>
-    </div>
-    <!-- /.box-body -->
   </div>
-  <!-- /.box -->
-  </div>
-  <!-- /.col -->
-  </div>
-  <!-- /.row -->
-</section>
-<!-- /.content -->
 </div>
-
-</footer>
-</section>

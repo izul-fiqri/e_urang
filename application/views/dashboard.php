@@ -1,17 +1,35 @@
-<section class="content-header">
-  <h1>Dashboard
-    <small>Control Panel</small>
-  </h1>
-  <ol class="breadcrumb">
-    <li><a href="#">
-        <i class="fa fa-dashboard"></i>
-      </a></li>
-    <li class="active">Dashboard</li>
-  </ol>
-</section>
+<div class="pagetitle">
+  <h1>Dashboard</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="">Admin</a></li>
+      <li class="breadcrumb-item">Dashboard</li>
+    </ol>
+  </nav>
+</div><!-- End Page Title -->
 
-<!-- Main contenct -->
-<section class="content">
+<section class="section">
+  <div class="row">
+    <div class="col-lg-6">
 
-  Dashboard Page
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Example Card</h5>
+          <p>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-lg-6">
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Example Card</h5>
+          <p>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>

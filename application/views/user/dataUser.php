@@ -1,74 +1,67 @@
-<section class="content-header">
-  <h1>Users
-    <small>Pengguna</small>
-  </h1>
-  <ol class="breadcrumb">
-    <li><a href="#">
-        <i class="fa fa-users"></i>
-      </a></li>
-    <li class="active">User</li>
-  </ol>
-</section>
+<div class="pagetitle">
+  <h1>Lowongan</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Admin</a></li>
+      <li class="breadcrumb-item">Users</li>
+      <li class="breadcrumb-item active">Data Users</li>
+    </ol>
+  </nav>
+</div><!-- End Page Title -->
 
-<!-- Main contenct -->
-<section class="content">
-  <div class="box">
-    <div class="box-header">
-      <h3 class="box-title">Data Pengguna</h3>
-      <div class="pull-right">
-        <a href="<?= site_url('user/add'); ?>" class="btn btn-primary btn-flat">
-          <i class="fa fa-user-plus"></i>
-          Tambah
-        </a>
-      </div>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Data Users</h5>
+    <div>
+      <a href="<?= site_url('admin/user/add'); ?>" class="btn btn-primary btn-flat">
+        Tambah
+      </a>
     </div>
-    <!-- /.box-header -->
-    <div class="box-body table-responsive">
-      <table class="table table-bordered table-striped">
-        <thead>
+    <!-- Table with hoverable rows -->
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>Username</th>
+          <th>Level</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php $no = 1;
+        foreach ($row->result() as $key => $data) : ?>
           <tr>
-            <th>No</th>
-            <th>Nama</th>
-            <th>Username</th>
-            <th>Level</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php $no = 1;
-          foreach ($row->result() as $key => $data) : ?>
-            <tr>
-              <td><?= $no++ ?></td>
-              <td><?= $data->name; ?></td>
-              <td><?= $data->username; ?></td>
-              <td><?= $data->level == 1 ? "Admin" : "Head" ?></td>
-              <td>
-                <form action="<?= site_url('user/hapus'); ?>" method="POST">
-                  <a href="<?= site_url('user/edit/' . $data->user_id); ?>" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>
+            <?php $a;
+            if ($data->level == 1) {
+              $a = "Admin";
+            } elseif ($data->level == 2) {
+              $a = "HRD";
+            } else {
+              $a = "Pelamar";
+            } ?>
+            <td><?= $no++ ?></td>
+            <td><?= $data->name; ?></td>
+            <td><?= $data->username; ?></td>
+            <td><?= $data->level = $a; ?></td>
+            <td>
+              <?php if ($a == "Pelamar" || $a == "HRD") : ?>
+                <form action="<?= site_url('admin/user/hapus'); ?>" method="POST">
+                  <a href="<?= site_url('admin/user/edit/' . $data->user_id); ?>" class="btn btn-primary rounded-pill">
                     Edit
                   </a>
                   <input type="hidden" value="<?= $data->user_id; ?>" name="user_id">
-                  <button onclick="return confirm('Apakah Anda yakin?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>
+                  <button onclick="return confirm('Apakah Anda yakin?')" class="btn btn-danger rounded-pill">
                     Hapus
                   </button>
                 </form>
+            </td>
+          <?php endif; ?>
+          </tr>
+        <?php endforeach; ?>
+      </tbody>
+    </table>
+    <!-- End Table with hoverable rows -->
 
-              </td>
-            </tr>
-          <?php endforeach; ?>
-        </tbody>
-      </table>
-    </div>
-    <!-- /.box-body -->
   </div>
-  <!-- /.box -->
-  </div>
-  <!-- /.col -->
-  </div>
-  <!-- /.row -->
-</section>
-<!-- /.content -->
 </div>
-
-</footer>
-</section>
