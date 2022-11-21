@@ -2,7 +2,7 @@
   <h1>Dashboard</h1>
   <nav>
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="">Admin</a></li>
+      <li class="breadcrumb-item"><a href="">e-Urang</a></li>
       <li class="breadcrumb-item">Dashboard</li>
     </ol>
   </nav>

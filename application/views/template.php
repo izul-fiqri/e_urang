@@ -28,13 +28,6 @@
 
   <!-- Template Main CSS File -->
   <link href="<?= base_url() ?>assets/adminnice/assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: NiceAdmin - v2.4.1
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -160,56 +153,80 @@
 
     <ul class="sidebar-nav" id="sidebar-nav">
 
+
       <li class="nav-item">
-        <a class="nav-link collapsed" href="<?= site_url('dashboard/dash_admin') ?>">
+        <a class="nav-link collapsed" href="<?= site_url('dashboard') ?>">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="<?= site_url('admin/lowongan') ?>">
-          <i class="bi bi-question-circle"></i>
-          <span>Lowongan</span>
-        </a>
-      </li><!-- End F.A.Q Page Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="<?= site_url('admin/pelamar'); ?>">
-          <i class="bi bi-envelope"></i>
-          <span>Pelamar</span>
-        </a>
-      </li><!-- End Contact Page Nav -->
+      <?php if ($this->func->user_login()->level == 3) : ?>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="<?= site_url('daftar'); ?>">
+            <i class="bi bi-dash-circle"></i>
+            <span>Daftar</span>
+          </a>
+        </li>
+      <?php endif ?>
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-register.html">
-          <i class="bi bi-card-list"></i>
-          <span>SPK</span>
-        </a>
-      </li><!-- End Register Page Nav -->
+      <?php if ($this->func->user_login()->level != 3) : ?>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="<?= site_url('lowongan') ?>">
+            <i class="bi bi-question-circle"></i>
+            <span>Lowongan</span>
+          </a>
+        </li><!-- End lowongan -->
+      <?php endif; ?>
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
-          <i class="bi bi-box-arrow-in-right"></i>
-          <span>Hasil Hitung</span>
-        </a>
-      </li><!-- End Login Page Nav -->
+      <?php if ($this->func->user_login()->level != 3) : ?>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="<?= site_url('pelamar'); ?>">
+            <i class="bi bi-envelope"></i>
+            <span>Pelamar</span>
+          </a>
+        </li><!-- End Contact Page Nav -->
+      <?php endif; ?>
 
-      <li class="nav-item">
-        <a class="nav-link " href="pages-blank.html">
-          <i class="bi bi-file-earmark"></i>
-          <span>Kriteria</span>
-        </a>
-      </li><!-- End Blank Page Nav -->
-      <!-- End Dashboard Nav -->
+      <?php if ($this->func->user_login()->level != 3) : ?>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="pages-register.html">
+            <i class="bi bi-card-list"></i>
+            <span>SPK</span>
+          </a>
+        </li><!-- End Register Page Nav -->
+      <?php endif; ?>
+
+      <?php if ($this->func->user_login()->level != 3) : ?>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="pages-login.html">
+            <i class="bi bi-box-arrow-in-right"></i>
+            <span>Hasil Hitung</span>
+          </a>
+        </li><!-- End Login Page Nav -->
+      <?php endif; ?>
+
+      <?php if ($this->func->user_login()->level != 3) : ?>
+        <li class="nav-item">
+          <a class="nav-link " href="pages-blank.html">
+            <i class="bi bi-file-earmark"></i>
+            <span>Kriteria</span>
+          </a>
+        </li><!-- End Blank Page Nav -->
+      <?php endif; ?>
+
 
       <li class="nav-heading">Settings</li>
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="<?= site_url('admin/user') ?>">
-          <i class="bi bi-person"></i>
-          <span>Users</span>
-        </a>
-      </li><!-- End Profile Page Nav -->
+      <?php if ($this->func->user_login()->level != 3) : ?>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="<?= site_url('user') ?>">
+            <i class="bi bi-person"></i>
+            <span>Users</span>
+          </a>
+        </li><!-- End user -->
+      <?php endif; ?>
+
     </ul>
 
   </aside><!-- End Sidebar-->

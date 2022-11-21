@@ -25,4 +25,28 @@ function check_not_login()
       redirect('dashboard');
     }
   }
+  function check_pelamar()
+  {
+    $ci = &get_instance();
+    $ci->load->library('func');
+    if ($ci->func->user_login()->level != 3) {
+      redirect('dashboard');
+    }
+  }
+  function check_leader()
+  {
+    $ci = &get_instance();
+    $ci->load->library('func');
+    if ($ci->func->user_login()->level != 2) {
+      redirect('dashboard');
+    }
+  }
+  function check_leader_and_admin()
+  {
+    $ci = &get_instance();
+    $ci->load->library('func');
+    if ($ci->func->user_login()->level == 3) {
+      redirect('dashboard');
+    }
+  }
 }

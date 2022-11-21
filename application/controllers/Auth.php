@@ -43,19 +43,10 @@ class Auth extends CI_Controller
         echo "<script> 
         alert('Selamat, login berhasil');
         </script>";
-        if ($row->level == 1) {
-          echo "<script> 
-        window.location='" . site_url('dashboard/dash_admin') . "';
+
+        echo "<script> 
+        window.location='" . site_url('dashboard') . "';
         </script>";
-        } else if ($row->level == 2) {
-          echo "<script> 
-        window.location='" . site_url('dashboard/dash_leader') . "';
-        </script>";
-        } else if ($row->level == 3) {
-          echo "<script> 
-          window.location='" . site_url('dashboard/dash_pelamar') . "';
-          </script>";
-        }
       } else {
         echo "<script> alert('login gagal, username/password salah');
         window.location='" . site_url('auth/login') . "';

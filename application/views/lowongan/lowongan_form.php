@@ -14,7 +14,7 @@
     <h5 class="card-title"><?= $page; ?> Lowongan</h5>
 
     <!-- Form lowongan-->
-    <form class="row g-3 needs-validation" action="<?= site_url('admin/lowongan/proses'); ?>" method="POST" novalidate>
+    <form class="row g-3 needs-validation" action="<?= site_url('lowongan/proses'); ?>" method="POST" novalidate>
       <input type="hidden" name="id" value="<?= $row->lowongan_id; ?>">
       <div class="col-6">
         <label for="nama_lowongan" class="form-label">Nama Lowongan</label>
