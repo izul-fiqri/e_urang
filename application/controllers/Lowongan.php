@@ -12,7 +12,6 @@ class Lowongan extends CI_Controller
   }
   public function index()
   {
-    // check_admin();
     check_leader_and_admin();
     $data['row'] = $this->mLowongan->getdata();
     $this->template->load('template', 'lowongan/dataLowongan', $data);
@@ -62,17 +61,19 @@ class Lowongan extends CI_Controller
     }
 
     if ($this->db->affected_rows() > 0) {
-      echo "<script>alert('data berhasil di simpan')</script>";
+      $this->session->set_flashdata('success', 'Data berhasil disimpan');
     }
-    echo "<script>window.location='" . site_url('lowongan') . "'</script>";
+    redirect('lowongan');
   }
 
   public function hapus($id)
   {
     $this->mLowongan->hapus($id);
     if ($this->db->affected_rows() > 0) {
-      echo "<script>alert('data berhasil dihapus')</script>";
+      // echo "<script>alert('data berhasil dihapus')</script>";
+      $this->session->set_flashdata('success', 'Data berhasil dihapus');
     }
-    echo "<script>window.location='" . site_url('lowongan') . "'</script>";
+    // echo "<script>window.location='" . site_url('lowongan') . "'</script>";
+    redirect('lowongan');
   }
 }

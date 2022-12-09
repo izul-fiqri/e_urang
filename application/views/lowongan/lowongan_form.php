@@ -2,9 +2,9 @@
   <h1>Lowongan</h1>
   <nav>
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="index.html">Admin</a></li>
-      <li class="breadcrumb-item">Lowongan</li>
-      <li class="breadcrumb-item active">Form Lowongan</li>
+      <li class="breadcrumb-item"><a href="index.html">Lowongan</a></li>
+      <li class="breadcrumb-item">Data Lowongan</li>
+      <li class="breadcrumb-item active"><?= $page; ?> Lowongan</li>
     </ol>
   </nav>
 </div><!-- End Page Title -->

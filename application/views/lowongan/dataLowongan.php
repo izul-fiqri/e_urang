@@ -9,7 +9,9 @@
   </nav>
 </div><!-- End Page Title -->
 
+<?php $this->view('message'); ?>
 <div class="card">
+
   <div class="card-body">
     <h5 class="card-title">Data Lowongan</h5>
     <?php if ($this->func->user_login()->level == 1) : ?>
@@ -29,6 +31,7 @@
           <th>Deskripsi</th>
           <th>Buka Pendaftaran</th>
           <th>Tutup Pendaftaran</th>
+          <th>Aksi</th>
         </tr>
       </thead>
       <tbody>

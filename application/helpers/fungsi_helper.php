@@ -25,6 +25,7 @@ function check_not_login()
       redirect('dashboard');
     }
   }
+
   function check_pelamar()
   {
     $ci = &get_instance();
@@ -33,6 +34,7 @@ function check_not_login()
       redirect('dashboard');
     }
   }
+
   function check_leader()
   {
     $ci = &get_instance();
@@ -41,6 +43,7 @@ function check_not_login()
       redirect('dashboard');
     }
   }
+
   function check_leader_and_admin()
   {
     $ci = &get_instance();

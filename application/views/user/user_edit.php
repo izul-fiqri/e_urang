@@ -2,16 +2,16 @@
   <h1>Users</h1>
   <nav>
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="index.html">Admin</a></li>
-      <li class="breadcrumb-item">Users</li>
-      <li class="breadcrumb-item active">Form User</li>
+      <li class="breadcrumb-item"><a href="index.html">Users</a></li>
+      <li class="breadcrumb-item">Data Users</li>
+      <li class="breadcrumb-item active">Edit User</li>
     </ol>
   </nav>
 </div><!-- End Page Title -->
 
 <div class="card">
   <div class="card-body">
-    <h5 class="card-title">Edit User</h5>
+    <h5 class="card-title">Edit Data User</h5>
 
     <!-- Vertical Form -->
     <form class="row g-3" method="POST">

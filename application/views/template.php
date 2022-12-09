@@ -36,7 +36,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="<?= site_url('dashboard/dash_admin'); ?>" class="logo d-flex align-items-center">
+      <a href="<?= site_url('dashboard'); ?>" class="logo d-flex a  lign-items-center">
         <img src="<?= base_url() ?>assets/adminnice/assets/img/logo.png" alt="">
         <span class="d-none d-lg-block">e-URANG</span>
       </a>
@@ -163,7 +163,7 @@
 
       <?php if ($this->func->user_login()->level == 3) : ?>
         <li class="nav-item">
-          <a class="nav-link collapsed" href="<?= site_url('daftar'); ?>">
+          <a class="nav-link collapsed" href="<?= site_url('daftar/add') ?>">
             <i class="bi bi-dash-circle"></i>
             <span>Daftar</span>
           </a>
@@ -208,7 +208,7 @@
 
       <?php if ($this->func->user_login()->level != 3) : ?>
         <li class="nav-item">
-          <a class="nav-link " href="pages-blank.html">
+          <a class="nav-link collapsed" href="pages-blank.html">
             <i class="bi bi-file-earmark"></i>
             <span>Kriteria</span>
           </a>

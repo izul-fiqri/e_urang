@@ -3,12 +3,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Auth extends CI_Controller
 {
+
   public function login()
   {
     check_already_login();
     $this->load->view('login');
   }
 
+  //fungsi registrasi
   public function register()
   {
     $this->load->view('register');
@@ -24,7 +26,7 @@ class Auth extends CI_Controller
     }
   }
 
-  //fungsi proses login
+  // fungsi proses login
   public function process()
   {
     $post = $this->input->post(null, TRUE);
@@ -55,6 +57,7 @@ class Auth extends CI_Controller
     }
   }
 
+  //fungsi logout
   public function logout()
   {
     $params = array('userid', 'level');
