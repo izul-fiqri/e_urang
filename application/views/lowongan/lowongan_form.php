@@ -23,7 +23,7 @@
       </div>
       <div class="col-1">
         <label for="kuota" class="form-label">Kuota</label>
-        <input type="text" class="form-control" id=kuota name="kuota" value="<?= $row->kouta; ?>" required>
+        <input type="text" class="form-control" id=kuota name="kuota" value="<?= $row->kuota; ?>" required>
         <div class="invalid-feedback">kuota tidak boleh kosong.</div>
       </div>
       <div class="col-12">

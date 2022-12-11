@@ -27,7 +27,7 @@ class mPelamar extends CI_Model
   public function add($post)
   {
     $params = [
-      'lowongan_id' => $post['pilih_lowonngan'],
+      'lowongan_id' => $post['pilih_lowongan'],
       'nama' => $post['nama'],
       'nik' => $post['nik'],
       'jenis_kelamin' => $post['jenis_kelamin'],

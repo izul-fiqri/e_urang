@@ -18,7 +18,7 @@ class mLowongan extends CI_Model
   {
     $params = [
       'nama_lowongan' => $post['nama_lowongan'],
-      'kouta' => $post['kuota'],
+      'kuota' => $post['kuota'],
       'description' => $post['deskripsi'],
       'tgl_buka' => $post['tgl_buka'],
       'tgl_tutup' => $post['tgl_tutup']
@@ -31,7 +31,7 @@ class mLowongan extends CI_Model
   {
     $params = [
       'nama_lowongan' => $post['nama_lowongan'],
-      'kouta' => $post['kuota'],
+      'kuota' => $post['kuota'],
       'description' => $post['deskripsi'],
       'tgl_buka' => $post['tgl_buka'],
       'tgl_tutup' => $post['tgl_tutup']

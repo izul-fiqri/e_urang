@@ -18,16 +18,16 @@
                <!-- Bordered Tabs -->
 
                <!-- posisi yang dilamar -->
-               <form method="POST">
+               <form method="POST" action="<?= site_url('daftar/proses'); ?>">
 
                  <div class="row mb-3">
-                   <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Posisi yang dilamar</label>
+                   <label for="pilih_lowongan" class="col-md-4 col-lg-3 col-form-label">Posisi yang dilamar</label>
                    <div class="col-md-8 col-lg-9">
                      <div class="col-md-4">
-                       <select class="form-select" name="pilih_lowongan" aria-label="Default select example">
+                       <select class="form-select" id="pilih_lowongan" name="pilih_lowongan" aria-label="Default select example">
                          <option selected>Open this select menu</option>
                          <?php foreach ($lowongan->result() as $key => $data) { ?>
-                           <option value=""><?= $data->nama_lowongan; ?></option>
+                           <option value="<?= $data->lowongan_id ?>" > <?= $data->nama_lowongan; ?></option>
                          <?php } ?>
                        </select>
                      </div>
@@ -180,7 +180,7 @@
                    </div>
                  </div>
                  <div class="text-center">
-                   <button type="submit" class="btn btn-primary">Daftar</button>
+                   <button type="submit" name="<?= $page; ?>" class="btn btn-primary">Daftar</button>
                  </div>
                </form>
              </div>

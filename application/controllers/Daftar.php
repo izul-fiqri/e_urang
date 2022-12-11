@@ -62,6 +62,6 @@ class Daftar extends CI_Controller
     if ($this->db->affected_rows() > 0) {
       $this->session->set_flashdata('success', 'Data berhasil disimpan');
     }
-    redirect('daftar');
+    redirect('dashboard');
   }
 }

@@ -7,7 +7,7 @@
     </ol>
   </nav>
 </div><!-- End Page Title -->
-
+<?php $this->view('message'); ?>
 <section class="section">
   <div class="row">
     <div class="col-lg-6">

@@ -40,7 +40,7 @@
           <tr>
             <td><?= $no++ ?></td>
             <td><?= $data->nama_lowongan; ?></td>
-            <td><?= $data->kouta; ?></td>
+            <td><?= $data->kuota; ?></td>
             <td><?= $data->description; ?></td>
             <td><?= $data->tgl_buka; ?></td>
             <td><?= $data->tgl_tutup; ?></td>
