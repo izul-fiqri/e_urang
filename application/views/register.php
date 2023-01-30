@@ -53,19 +53,19 @@
                 <div class="card-body">
 
                   <div class="pt-4 pb-2">
-                    <h5 class="card-title text-center pb-0 fs-4">Create an Account</h5>
-                    <p class="text-center small">Enter your personal details to create account</p>
+                    <h5 class="card-title text-center pb-0 fs-4">Pembuatan Akun</h5>
+                    <p class="text-center small">masukkan data yang diminta untuk membuat akun</p>
                   </div>
 
                   <form class="row g-3 needs-validation" novalidate method="POST">
                     <div class="col-12">
-                      <label for="yourName" class="form-label">Nama</label>
-                      <input type="text" name="name" class="form-control" id="yourName" required>
+                      <label for="name" class="form-label">NIK</label>
+                      <input type="text" name="name" class="form-control" id="name" required>
                       <div class="invalid-feedback">Please, enter your name!</div>
                     </div>
 
                     <div class="col-12">
-                      <label for="yourUsername" class="form-label">Username</label>
+                      <label for="user" class="form-label">Username</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
                         <input type="text" name="username" class="form-control" id="yourUsername" required>
@@ -93,10 +93,10 @@
                       </div>
                     </div>
                     <div class="col-12">
-                      <button class="btn btn-primary w-100" name="register" type="submit">Create Account</button>
+                      <button class="btn btn-primary w-100" name="register" type="submit">Buat Akun</button>
                     </div>
                     <div class="col-12">
-                      <p class="small mb-0">Already have an account? <a href="<?= site_url('auth/login'); ?>">Log in</a></p>
+                      <p class="small mb-5">sudah punya akun? <a href="<?= site_url('auth/login'); ?>">Login</a></p>
                     </div>
                   </form>
 

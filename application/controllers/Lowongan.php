@@ -23,7 +23,7 @@ class Lowongan extends CI_Controller
     $lowongan = new stdClass();
     $lowongan->lowongan_id = null;
     $lowongan->nama_lowongan = null;
-    $lowongan->kouta = null;
+    $lowongan->kuota = null;
     $lowongan->description = null;
     $lowongan->tgl_buka = null;
     $lowongan->tgl_tutup = null;

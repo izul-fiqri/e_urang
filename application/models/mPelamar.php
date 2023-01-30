@@ -26,6 +26,7 @@ class mPelamar extends CI_Model
 
   public function add($post)
   {
+    // error_reporting(E_ALL ^ E_WARNING || E_NOTICE);
     $params = [
       'lowongan_id' => $post['pilih_lowongan'],
       'nama' => $post['nama'],
@@ -36,14 +37,16 @@ class mPelamar extends CI_Model
       'alamat' => $post['alamat'],
       'no_tlp' => $post['no_tlp'],
       'email' => $post['email'],
+      'password' => $post['password'],
       'pendidikan_terakhir' => $post['pendidikan'],
       'nama_sekolah' => $post['sekolah'],
       'jurusan' => $post['jurusan'],
-      'foto_profil' => $post['foto'],
-      'file_ktp' => $post['ktp'],
-      'file_transkrip' => $post['transkrip'],
-      'file_skck' => $post['skck'],
-      'file_cv' => $post['cv'],
+      // 'foto_profil' => $post['foto_profil'],
+      // 'file_ktp' => $post['ktp'],
+      // 'file_transkrip' => $post['transkrip'],
+      'file_transkrip' => $post['file_transkrip']
+      // 'file_skck' => $post['skck'],
+      // 'file_cv' => $post['cv'],
     ];
     $this->db->insert('pelamar', $params);
   }

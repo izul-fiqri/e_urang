@@ -75,7 +75,7 @@
           <h1 data-aos="fade-up">Welcome to PT Mega Marine's New Employee Registration Website</h1>
           <h2 data-aos="fade-up" data-aos-delay="400">We accept employees with potential and willingness to learn. let's join us!</h2>
           <div data-aos="fade-up" data-aos-delay="800">
-            <a href="<?= site_url('auth/register'); ?>" class="btn-get-started scrollto">Join</a>
+            <a href="<?= site_url('daftar'); ?>" class="btn-get-started scrollto">Join</a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">

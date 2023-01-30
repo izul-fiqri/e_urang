@@ -11,20 +11,20 @@ class Auth extends CI_Controller
   }
 
   //fungsi registrasi
-  public function register()
-  {
-    $this->load->view('register');
-    $this->load->model('mUser');
-    if (isset($_POST['register'])) {
-      $post = $this->input->post(null, true);
-      $this->mUser->register($post);
-      if ($this->db->affected_rows() > 0) {
-        echo "<script>alert('data berhasil ditambahkan. silahkan login untuk memulai pendaftaran')</script>";
-      }
-      echo "<script>window.location='" . site_url('home') . "'</script>";
-      echo "salah";
-    }
-  }
+  // public function register()
+  // {
+  //   $this->load->view('register');
+  //   $this->load->model('mUser');
+  //   if (isset($_POST['register'])) {
+  //     $post = $this->input->post(null, true);
+  //     $this->mUser->register($post);
+  //     if ($this->db->affected_rows() > 0) {
+  //       echo "<script>alert('data berhasil ditambahkan. silahkan login untuk memulai pendaftaran')</script>";
+  //     }
+  //     echo "<script>window.location='" . site_url('daftar') . "'</script>";
+  //     echo "salah";
+  //   }
+  // }
 
   // fungsi proses login
   public function process()
